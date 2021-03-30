@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"	
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/LayoutPadrao}">
+	
+	<head>
+		<title>Consultar dados de entrada</title>
+	</head>
+	
+	<section layout:fragment="conteudo">
+	
+		<div class="card mx-auto">
+		
+			<div class="card-header bg-secondary text-white">
+				<h4 class="float-left">Parâmetros de entrada ura RACO - Homologação</h4>
+			</div>
+			
+			<div class="card-body bg-light">
+			
+				<th:block th:include="fragments/MensagemErro"></th:block>
+			
+				<div class="form-row">
+					<div class="form-group col-sm-12">
+						<table class="table table-bordered table-sm table-striped">
+							<thead class="thead-dark">
+								<tr>
+									<th class="text-center">Ani</th>
+									<th class="text-center">Número tratado</th>
+									<th>Nome do cliente</th>
+									<th>Protocolo</th>
+									<th class="text-center">CpfCnpj</th>
+									<th class="text-center">#</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="entrada : ${entradas}">
+									<td th:text="${entrada.ani}"></td>
+									<td th:text="${entrada.numeroTratado}"></td>
+									<td th:text="${entrada.nomeCliente}"></td>
+									<td th:text="${entrada.protocolo}"></td>
+									<td th:text="${entrada.cpfCnpj}"></td>
+									
+									<td style="width: 100px" class="text-center">
+										<a class="btn btn-primary btn-sm" th:href="@{/editar/{id}(id=${entrada.id})}" title="editar">
+				   							<i class="fa fa-pencil"></i>
+				   						</a>
+				   						
+				   						<!-- 
+				   						<a class="btn btn-warning btn-sm" data-toggle="modal" data-target="#confirmacaoExclusaoModal" style="border: 1px solid blue" title="deletar" th:attr="data-codigo=${entrada.id}">
+				   						
+				   							<i class="fas fa-trash-alt"></i>
+				   						</a>
+				   						 -->
+									</td>
+									
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</section>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"	
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/LayoutPadrao}">
+	
+	<head>
+		<title>Dados de entrada ura RACO</title>
+	</head>
+	
+	<section layout:fragment="conteudo">
+	
+		<div class="card mx-auto">
+		
+			<div class="card-header bg-secondary text-white">
+				<h4 class="float-left">Parâmetros de entrada ura RACO - Homologação</h4>
+			</div>
+		
+			<div class="card-body bg-light">
+				<th:block th:include="fragments/MensagemSucesso"></th:block>
+				<th:block th:include="fragments/MensagemErro"></th:block>
+				
+				<form method="POST" th:object="${entradaRaco}" th:action="@{/novo}">
+					<th:block th:include="fragments/MensagensErroValidacao"></th:block>
+					
+					<input type="hidden" id="id" th:field="*{id}">
+					
+					<div class="form-row">
+						
+						<div class="form-group col-sm-12" th:classappend="${#fields.hasErrors('uui')} ? has-error">
+							<label for="uui" class="control-label" >UUI</label>
+							<input type="text" class="form-control form-control-sm" id="uui"  th:field="*{uui}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('ani')} ? has-error">
+							<label for="ani" class="control-label" >Ani</label>
+							<input type="text" class="form-control form-control-sm" id="ani"  th:field="*{ani}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('numeroTratado')} ? has-error">
+							<label for="numeroTratado" class="control-label" >Número tratado</label>
+							<input type="text" class="form-control form-control-sm" id="numeroTratado"  th:field="*{numeroTratado}"/>
+						</div>
+						
+						<div class="form-group col-sm-4" th:classappend="${#fields.hasErrors('nomeCliente')} ? has-error">
+							<label for="nomeCliente" class="control-label" >Nome cliente</label>
+							<input type="text" class="form-control form-control-sm" id="nomeCliente"  th:field="*{nomeCliente}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('protocolo')} ? has-error">
+							<label for="protocolo" class="control-label" >Protocolo</label>
+							<input type="text" class="form-control form-control-sm" id="protocolo"  th:field="*{protocolo}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('cpfCnpj')} ? has-error">
+							<label for="cpfCnpj" class="control-label" >CpfCnpj</label>
+							<input type="text" class="form-control form-control-sm" id="cpfCnpj"  th:field="*{cpfCnpj}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('cpfAniOiTv')} ? has-error">
+							<label for="cpfAniOiTv" class="control-label" >Cpf Ani Oi Tv</label>
+							<input type="text" class="form-control form-control-sm" id="cpfAniOiTv"  th:field="*{cpfAniOiTv}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('numeroContratoTv')} ? has-error">
+							<label for="numeroContratoTv" class="control-label" >Contrato Oi Tv</label>
+							<input type="text" class="form-control form-control-sm" id="numeroContratoTv"  th:field="*{numeroContratoTv}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('segmento')} ? has-error">
+							<label for="segmento" class="control-label" >Segmento</label>
+							<input type="text" class="form-control form-control-sm" id="segmento"  th:field="*{segmento}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('produto')} ? has-error">
+							<label for="produto" class="control-label" >Produto</label>
+							<input type="text" class="form-control form-control-sm" id="produto"  th:field="*{produto}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('uraRetencao')} ? has-error">
+							<label for="uraRetencao" class="control-label" >Ura retenção</label>
+							<input type="text" class="form-control form-control-sm" id="uraRetencao"  th:field="*{uraRetencao}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('uraEntrada')} ? has-error">
+							<label for="uraEntrada" class="control-label" >Ura entrada</label>
+							<input type="text" class="form-control form-control-sm" id="uraEntrada"  th:field="*{uraEntrada}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('uraProduto')} ? has-error">
+							<label for="uraProduto" class="control-label" >Ura produto</label>
+							<input type="text" class="form-control form-control-sm" id="uraProduto"  th:field="*{uraProduto}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('uraContratacao90Dias')} ? has-error">
+							<label for="uraContratacao90Dias" class="control-label" >Ura contratação 90 dias</label>
+							<input type="text" class="form-control form-control-sm" id="uraContratacao90Dias"  th:field="*{uraContratacao90Dias}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('uraMailing')} ? has-error">
+							<label for="uraMailing" class="control-label" >Ura mailing</label>
+							<input type="text" class="form-control form-control-sm" id="uraMailing"  th:field="*{uraMailing}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('uraCancelamentoPrecoce')} ? has-error">
+							<label for="uraCancelamentoPrecoce" class="control-label" >Ura cancelamento precoce</label>
+							<input type="text" class="form-control form-control-sm" id="uraCancelamentoPrecoce"  th:field="*{uraCancelamentoPrecoce}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('valorUltimaConta')} ? has-error">
+							<label for="valorUltimaConta" class="control-label" >Valor última conta</label>
+							<input type="text" class="form-control form-control-sm" id="valorUltimaConta"  th:field="*{valorUltimaConta}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('tipobloqueio')} ? has-error">
+							<label for="tipobloqueio" class="control-label" >Tipo bloqueio</label>
+							<input type="text" class="form-control form-control-sm" id="tipobloqueio"  th:field="*{tipobloqueio}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('noPlano')} ? has-error">
+							<label for="noPlano" class="control-label" >No plano</label>
+							<input type="text" class="form-control form-control-sm" id="noPlano"  th:field="*{noPlano}"/>
+						</div>
+						
+						<div class="form-group col-sm-2" th:classappend="${#fields.hasErrors('falha')} ? has-error">
+							<label for="falha" class="control-label" >Falha</label>
+							<input type="text" class="form-control form-control-sm" id="falha"  th:field="*{falha}"/>
+						</div>
+					</div>
+					
+					
+					<button type="submit" class="btn btn-primary btn-sm" title="salvar nova entrada">
+						<i class="fa  fa-fw  fa-save"></i>
+						Salvar
+					</button>
+				
+
+				</form>
+			</div>
+			
+		</div>
+	
+	</section>
+	
+</html>

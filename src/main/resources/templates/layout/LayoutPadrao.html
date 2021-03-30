@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+							xmlns:th="http://www.thymeleaf.org"
+	                        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	
+		<title>RACO</title>
+	
+		<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/font-awesome/css/font-awesome.min.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}">
+	</head>
+
+	<body>
+		
+		<nav class="navbar fixed-top navbar-dark bg-secondary navbar-expand-lg">
+			<a class="navbar-brand" href="#">
+				<!-- <img alt="Everis" src="#" />  -->
+				<!--SGI-->
+			</a>
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navegacao1" aria-controls="navegacao1" aria-expanded="false" aria-label="Navegação">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		
+			<div class="collapse navbar-collapse justify-content-end" id="navegacao1">
+				<div class="navbar-nav mr-1">
+						<a class="btn btn-primary btn-sm" th:href="@{/iniciar}"  role="button">
+							<i class="fa fa-arrow-left" aria-hidden="true"></i>
+						 	Novo
+						</a>
+				</div>
+				
+				<div class="navbar-nav">
+						<a class="btn btn-primary btn-sm" th:href="@{/pesquisar}"  role="button">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						 	Consulta
+						</a>
+				</div>
+			</div>
+		</nav>
+			
+	    <div class="container-fluid" id="conteudo" style="width: 70%">
+		    <section layout:fragment="conteudo"></section>
+	    </div>
+		
+	    <div class="footer-copyright text-center py-3 text-white bg-secondary fixed-bottom">
+	   		 <small>&copy; 2020 Everis. Todos os direitos reservados.</small>
+	    </div>
+	    
+		<script type="text/javascript" th:src="@{/js/jquery/jquery-3.4.1.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap/bootstrap.bundle.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/sgm.js}"></script>
+		<script th:src="@{https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js}"></script>
+			
+		<th:block layout:fragment="javascript-extra"></th:block>
+	</body>
+</html>
