@@ -47,6 +47,8 @@ public class EntradaControle {
 		}
 		mv.addObject("entradas", entradas);
 		
+		System.out.println("Apenas um teste");
+		
 		return mv;
 	}
 	
